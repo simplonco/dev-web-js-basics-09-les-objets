@@ -13,21 +13,23 @@ show_toc: true
 
 Avoir validé les ressources suivantes :
 
-[Voir la ressource "JS Basics 01 - Qu'est-ce que JavaScript"](https://simplonco.github.io/dev-web-js-basics-01-qu-est-ce-que-javascript/)
+[JS Basics 01 - Qu'est-ce que JavaScript](https://simplonco.github.io/dev-web-js-basics-01-qu-est-ce-que-javascript/)
 
-[Voir la ressource "JS Basics 02 - Syntaxe et concepts de base"](https://simplonco.github.io/dev-web-js-basics-02-syntaxe-et-concepts-de-base/)
+[JS Basics 02 - Syntaxe et concepts de base](https://simplonco.github.io/dev-web-js-basics-02-syntaxe-et-concepts-de-base/)
 
-[Voir la ressource "JS Basics 03 - Les variables"](https://simplonco.github.io/dev-web-js-basics-03-les-variables/)
+[JS Basics 03 - Les variables](https://simplonco.github.io/dev-web-js-basics-03-les-variables/)
 
-[Voir la ressource "JS Basics 04 - Les types de données"](https://simplonco.github.io/dev-web-js-basics-04-les-types-de-donnees/)
+[JS Basics 04 - Les types de données](https://simplonco.github.io/dev-web-js-basics-04-les-types-de-donnees/)
 
-[Voir la ressource "JS Basics 05 - Les instructions conditionnelles"](https://simplonco.github.io/dev-web-js-basics-05-les-instructions-conditionnelles/)
+[JS Basics 05 - Les instructions conditionnelles](https://simplonco.github.io/dev-web-js-basics-05-les-instructions-conditionnelles/)
 
-[Voir la ressource "JS Basics 06 - Les fonctions"](https://simplonco.github.io/dev-web-js-basics-06-les-fonctions/)
+[JS Basics 06 - Les fonctions](https://simplonco.github.io/dev-web-js-basics-06-les-fonctions/)
 
-[Voir la ressource "JS Basics 07 - Les tableaux"](https://simplonco.github.io/dev-web-js-basics-07-les-tableaux/)
+[JS Basics 07 - Les tableaux](https://simplonco.github.io/dev-web-js-basics-07-les-tableaux/)
 
-[Voir la ressource "JS Basics 08 - Les boucles"](https://simplonco.github.io/dev-web-js-basics-08-les-boucles/)
+[JS Basics 07bis - Les tableaux - Autres méthodes utiles](https://simplonco.github.io/dev-web-js-basics-07bis-les-tableaux-autres-methodes-utiles/)
+
+[JS Basics 08 - Les boucles](https://simplonco.github.io/dev-web-js-basics-08-les-boucles/)
 
 ## Introduction
 
@@ -41,8 +43,6 @@ Dans cette ressource, nous verrons **comment créer et manipuler des objets en J
 **C'est parti!**
 
 ## Que sont les objets ?
-
-![Pommes](images/pommes.png)
 
 Les objets en Javascript sont comme les objets qui t'entourent.
 
@@ -96,7 +96,7 @@ apple['color'];
 
 La plupart du temps, tu utiliseras un point pour accéder à une propriété (`apple.color`), mais les **crochets peuvent aussi être très utiles** par exemple dans le cas où tu souhaites **utiliser une variable pour accéder à une valeur.**
 
-```js live console
+{% capture my_js %}
 const apple = {
   color: "#00FF00",
   diameter: 10,
@@ -110,7 +110,13 @@ const apple = {
 let selectedProperty = "color";
 //selectedProperty = prompt('Tape la propriété que tu veux afficher') ;
 console.log(apple[selectedProperty]) ;
-```
+{% endcapture %}
+
+{% include playground.html
+  id="access-property"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 Décommente la ligne `//selectedProperty = prompt(…` pour saisir et tester une autre propriété.
 {:.alert-info}
@@ -128,14 +134,17 @@ Décommente la ligne `//selectedProperty = prompt(…` pour saisir et tester une
 
 - Enfin, utilise console.log pour afficher la bonne propriété (en utilisant des crochets `[]`).
 
-```js live console
+{% capture my_js %}
 const billyTheCat = {
 //...
 };
-```
+{% endcapture %}
 
-Clique sur play pour lancer le code. Tu peux aussi changer le code pour tester des choses par toi-même
-{:.alert-info}
+{% include playground.html
+  id="billy-cat"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 <details markdown="1">
 <summary>Voir la solution</summary>
@@ -161,7 +170,7 @@ console.log(billyTheCat[selectedProperty]);
 
 Pour ajouter une propriété à un objet, il suffit de la définir comme ceci :
 
-```js console
+{% capture my_js %}
 const apple = {
   color: "#00FF00",
   diameter: 10,
@@ -176,7 +185,13 @@ const apple = {
 apple.growsOn = "Tree" ;
 
 console.log(apple)
-```
+{% endcapture %}
+
+{% include playground.html
+  id="add-property"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 De même, pour donner une autre valeur à la propriété d'un objet, il suffit d'utiliser le symbole égal `=`.
 
@@ -188,7 +203,7 @@ apple.color = "Red" ;
 
 On peut utiliser `delete` pour supprimer une propriété.
 
-```js console
+{% capture my_js %}
 const apple = {
   color: "#00FF00",
   diameter: 10,
@@ -202,7 +217,13 @@ const apple = {
 
 delete apple.variety.name;
 console.log(apple)
-```
+{% endcapture %}
+
+{% include playground.html
+  id="delete-property"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 ## Combiner des tableaux et des objets
 
@@ -230,9 +251,15 @@ Crée un tableau d'objets `animals`, le tableau doit contenir différents animau
 **Bonus:**
 Utilise une boucle pour afficher le son de chaque animal dans la console.
 
-```js live console
+{% capture my_js %}
 
-```
+{% endcapture %}
+
+{% include playground.html
+  id="animals"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 <details markdown="1">
 <summary>Voir la solution</summary>
@@ -319,7 +346,7 @@ Billy the Cat est de retour, essaye d'implémenter une méthode `feed` qui chang
 
 La méthode doit vérifier la valeur de `isHungry`, si Billy n'a pas faim, elle devrait afficher que Billy n'a pas faim dans la console; s'il a faim, elle devrait changer le booléen pour qu'il soit `false`.
 
-```js live console
+{% capture my_js %}
 const  billyTheCat = {
   name: "Billy",
   species: "Cat",
@@ -328,8 +355,13 @@ const  billyTheCat = {
     // Solution goes here
   }
 }
+{% endcapture %}
 
-```
+{% include playground.html
+  id="billy-feed"
+  initial_js=my_js
+  default_tab="js"
+%}
 
 <details markdown="1">
 <summary>Voir la solution</summary>
