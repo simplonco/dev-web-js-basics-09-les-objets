@@ -418,12 +418,12 @@ A chaque fois que nous écrivons `{}` pour décrire un objet, l'interpréteur Ja
 
 Belle ressource avec des explications claires sur les objets
 
-[Lien vers la ressource](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_objets)
+[https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_objets](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_objets)
 {:.alert-info}
 
 **Javascript.info - Objets**
 
 Très bonne ressource, information claire et facile à lire
 
-[Lien vers la ressource](https://javascript.info/object)
+[https://javascript.info/object](https://javascript.info/object)
 {:.alert-info}
